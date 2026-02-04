@@ -3,7 +3,7 @@ terraform {
   required_providers {
     kind = {
       source  = "tehcyx/kind"
-      version = "0.0.12"
+      version = "0.0.17"
     }
     null = {
       source  = "hashicorp/null"
