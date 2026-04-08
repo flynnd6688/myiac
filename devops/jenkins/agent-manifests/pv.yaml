@@ -15,8 +15,8 @@ spec:
   #   - hard
   #   - nfsvers=4.1
   nfs:
-    path: /data/storage/kubernetes/jenkins-build-cache
-    server: 192.168.1.200
+    path: /Users/dpp/k8s-nfs/jenkins-build-cache
+    server: 172.20.10.3
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -51,8 +51,8 @@ spec:
   #   - hard
   #   - nfsvers=4.1
   nfs:
-    path: /data/storage/kubernetes/jenkins-workspace
-    server: 192.168.1.200
+    path: /Users/dpp/k8s-nfs/jenkins-workspace
+    server: 172.20.10.3
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
