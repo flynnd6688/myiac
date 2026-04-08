@@ -27,3 +27,5 @@ override.tf.json
 
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
+devops/custom-jenkins-agent/tools/*.tar.gz
+devops/custom-jenkins-agent/tools/*.zip
