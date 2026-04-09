@@ -1,35 +1,13 @@
 apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: jenkins
-  labels:
-    app: jenkins
-spec:
-  capacity:
-    storage: 5Gi
-  volumeMode: Filesystem
-  accessModes:
-    - ReadWriteMany
-  storageClassName: ""
-  # mountOptions:
-  #   - hard
-  #   - nfsvers=4.1
-  nfs:
-    path: /Users/dpp/k8s-nfs/jenkins
-    server: 172.20.10.3
----
-apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: jenkins
+  namespace: jenkins
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   volumeMode: Filesystem
   resources:
     requests:
       storage: 5Gi
-  storageClassName: ""
-  selector:
-    matchLabels:
-      app: jenkins
+  storageClassName: standard
