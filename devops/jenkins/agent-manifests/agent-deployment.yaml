@@ -16,8 +16,8 @@ spec:
     metadata:
       labels:
         k8s-app: jenkinsagent
-      namespace: devops
-      name: jenkinsagent
+        namespace: devops
+        name: jenkinsagent
     spec:
       hostAliases:
         - ip: "172.20.10.3"
@@ -29,9 +29,17 @@ spec:
         - ip: "172.20.10.3"
           hostnames:
             - "nexus.idevops.site"
+      initContainers:
+        - name: fix-permissions
+          image: busybox
+          command: ["sh", "-c", "chown -R 1000:1000 /home/jenkins/workspace /home/jenkins/jenkins-build-cache"]
+          volumeMounts:
+            - name: jenkins-workspace
+              mountPath: /home/jenkins/workspace
+            - name: jenkins-build-cache
+              mountPath: /home/jenkins/jenkins-build-cache
       containers:
         - name: jenkinsagent
-          #image: ccr.ccs.tencentyun.com/devopsvip/inbound-agent:latest-jdk11
           image: jenkins/inbound-agent:latest-jdk17
           securityContext:
             privileged: true
