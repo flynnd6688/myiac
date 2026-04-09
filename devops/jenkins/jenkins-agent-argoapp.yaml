@@ -11,7 +11,7 @@ spec:
   source:
     path: devops/jenkins/agent-manifests
     repoURL: https://github.com/flynnd6688/myiac.git
-    targetRevision: main
+    targetRevision: master
     directory:
       recurse: false
   syncPolicy:
