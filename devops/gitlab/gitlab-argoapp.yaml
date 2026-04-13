@@ -10,8 +10,8 @@ spec:
   project: default
   source:
     path: devops/gitlab/manifests
-    repoURL: https://jihulab.com/devopsvvip/myiac.git
-    targetRevision: main
+    repoURL: https://github.com/flynnd6688/myiac.git
+    targetRevision: master
     directory:
       recurse: false
   syncPolicy:
