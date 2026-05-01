@@ -20,7 +20,7 @@ spec:
         name: jenkinsagent
     spec:
       hostAliases:
-        - ip: "172.20.10.3"
+        - ip: "10.0.39.37"
           hostnames:
             - "gitlab.idevops.site"
         - ip: "172.20.10.3"
