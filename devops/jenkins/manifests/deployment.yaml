@@ -25,7 +25,7 @@ spec:
       # - ip: "52.202.51.185"
       #   hostnames:
       #     - "updates.jenkins.io"
-      - ip: "192.168.1.200"
+      - ip: "10.0.39.37"
         hostnames:
           - "gitlab.idevops.site"
       - ip: "192.168.1.200"
