@@ -32,7 +32,7 @@ spec:
       initContainers:
         - name: fix-permissions
           image: busybox
-          command: ["sh", "-c", "chown -R 1000:1000 /home/jenkins/workspace /home/jenkins/jenkins-build-cache"]
+          command: ["sh", "-c", "chown -R 1000:1000 /home/jenkins/workspace /home/jenkins/jenkins-build-cache && mkdir -p /opt/jenkinsagent && chmod 777 /opt/jenkinsagent"]
           volumeMounts:
             - name: jenkins-workspace
               mountPath: /home/jenkins/workspace
