@@ -60,6 +60,8 @@ spec:
               value: build
             - name: JENKINS_AGENT_WORKDIR
               value: /home/jenkins/workspace
+            - name: AGENT_WORKDIR
+              value: /home/jenkins/workspace
           volumeMounts:
             - name: jenkins-build-cache
               mountPath: /home/jenkins/jenkins-build-cache
